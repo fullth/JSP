@@ -75,7 +75,7 @@ public class LogonDBBean {
 		try {
 			con = getConnection();
 		
-		pstmt = con.prepareStatement("select passwd from member where id= ?");
+		pstmt = con.prepareStatement("select password from member where id= ?");
 		pstmt.setString(1, id);
 		
 		rs = pstmt.executeQuery();
@@ -90,7 +90,7 @@ public class LogonDBBean {
 			} else 
 				x = -1;//해당 아이디가 없음.			
 		}catch(Exception e ) {
-			System.out.println("비밀번호 처리에 문제가 발생하였습니다.");
+			System.out.println("PW process failed");
 		}finally {
 			if(rs != null) {
 				rs.close();
