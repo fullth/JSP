@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>아이디체크와 세션유지 정보</title>
+<title>ID check & session data info</title>
 </head>
 <body>
 <%
 		String id = request.getParameter("id");
-		String passwd = request.getParameter("passwd");
+		String passwd = request.getParameter("password");
 	
 		LogonDBBean logon = LogonDBBean.getInstance();
 		
@@ -20,16 +20,15 @@
 		if(check == 1) {
 			session.setAttribute("id", id);
 			response.sendRedirect("sessionMain.jsp");
-						
 		}else if(check == 0) { %>
 		
 			<script>
-			alert("비밀번호가 맞지 않습니다...ㅠㅠ");
+			alert("Wrong PW");
 			history.go(-1);
 			</script>
 	<% } else {%>
 			<script>
-			alert("아이디가 틀립니다...ㅠㅠ");
+			alert("Wrong ID");
 			history.go(-1);
 			</script>
 	<% } %>

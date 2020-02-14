@@ -20,6 +20,6 @@
     LogonDBBean logon = LogonDBBean.getInstance();
     logon.insertMember(member);
 %>
-<jsp:getProperty name="member" property="id" />님 회원가입을 축하합니다.
+<jsp:getProperty name="member" property="id" /> Thanks for Join!
 </body>
 </html>
