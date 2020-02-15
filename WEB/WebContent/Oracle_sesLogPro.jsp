@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ page import="Beans.logonDbBean" %>
+<%@ page import="Beans.LogonDBBean" %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -12,7 +12,7 @@
 	String id = request.getParameter("id");
 	String password = request.getParameter("pw");
 	
-	logonDbBean logon = logonDbBean.getinstance();
+	LogonDBBean logon = LogonDBBean.getInstance();
 	
 	int check = logon.userCheck(id, password);
 	
